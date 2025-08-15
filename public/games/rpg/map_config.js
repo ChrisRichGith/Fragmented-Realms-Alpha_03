@@ -27,8 +27,8 @@ const MAP_CONFIG = {
         { x: 471, y: 680 }
     ],
     'Himmel.png': [
-        { x: 200, y: 100 }, // Placeholder for drop zone 1
-        { x: 450, y: 250 }  // Placeholder for drop zone 2
+        { x: 187, y: 401 },
+        { x: 451, y: 651 }
     ],
     'Höhle.png': [
         { x: 120, y: 220 }, // Placeholder for drop zone 1
