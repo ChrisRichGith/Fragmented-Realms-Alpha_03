@@ -113,6 +113,11 @@ body, html {
     width: 100%;
 }
 
+#player-character-card {
+    display: flex;
+    justify-content: center;
+}
+
 #npc-character-cards {
     display: flex;
     flex-direction: column;
@@ -136,6 +141,7 @@ body, html {
     width: 80px;  /* Slightly smaller image */
     height: 80px;
     object-fit: cover;
+    object-position: center 20%; /* Shifts the image down to prevent cutting off the top */
     border: 2px solid #c9b037;
 }
 
