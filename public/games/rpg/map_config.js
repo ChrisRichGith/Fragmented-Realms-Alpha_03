@@ -19,8 +19,8 @@ const MAP_CONFIG = {
     // I have added some placeholder examples.
 
     'Dorf.png': [
-        { x: 150, y: 200 }, // Placeholder for drop zone 1
-        { x: 400, y: 350 }  // Placeholder for drop zone 2
+        { x: 135, y: 530 },
+        { x: 328, y: 614 }
     ],
     'Dunkel.png': [
         { x: 250, y: 598 },
