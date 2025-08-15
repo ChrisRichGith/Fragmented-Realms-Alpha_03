@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const itemId = e.dataTransfer.getData('text/plain');
                     const itemElement = document.getElementById(itemId);
                     if (itemElement && zone.childElementCount === 0) {
-                        playSound('/Sounds/RPG/Drag.mp3'); // Play sound on drop
+                        playSound('/Sounds/RPG/Drag_rev.mp3'); // Play sound on drop
                         zone.appendChild(itemElement);
                         itemElement.style.position = 'static';
                     }
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const itemId = e.dataTransfer.getData('text/plain');
             const itemElement = document.getElementById(itemId);
             if (itemElement && dropZone.childElementCount === 0) {
-                playSound('/Sounds/RPG/Drag.mp3'); // Play sound on drop
+                playSound('/Sounds/RPG/Drag_rev.mp3'); // Play sound on drop
                 dropZone.appendChild(itemElement);
             }
         });
