@@ -23,8 +23,8 @@ const MAP_CONFIG = {
         { x: 400, y: 350 }  // Placeholder for drop zone 2
     ],
     'Dunkel.png': [
-        { x: 100, y: 150 }, // Placeholder for drop zone 1
-        { x: 350, y: 300 }  // Placeholder for drop zone 2
+        { x: 250, y: 598 },
+        { x: 471, y: 680 }
     ],
     'Himmel.png': [
         { x: 200, y: 100 }, // Placeholder for drop zone 1
@@ -41,20 +41,20 @@ const MAP_CONFIG = {
 
     // --- MAPS BELOW STILL NEED COORDINATES ---
     'Ruine.png': [
-        { x: 100, y: 100 },
-        { x: 100, y: 100 }
+        { x: 465, y: 552 },
+        { x: 170, y: 550 }
     ],
     'Schlachtfeld.png': [
-        { x: 100, y: 100 },
-        { x: 100, y: 100 }
+        { x: 389, y: 582 },
+        { x: 164, y: 593 }
     ],
     'Wald.png': [
-        { x: 100, y: 100 },
-        { x: 100, y: 100 }
+        { x: 399, y: 481 },
+        { x: 185, y: 546 }
     ],
     'Winter.png': [
-        { x: 100, y: 100 },
-        { x: 100, y: 100 }
+        { x: 467, y: 558 },
+        { x: 261, y: 614 }
     ],
     'Wüste.png': [
         { x: 100, y: 100 },
