@@ -35,8 +35,8 @@ const MAP_CONFIG = {
         { x: 380, y: 400 }  // Placeholder for drop zone 2
     ],
     'Lava.png': [
-        { x: 180, y: 180 }, // Placeholder for drop zone 1
-        { x: 420, y: 320 }  // Placeholder for drop zone 2
+        { x: 82, y: 569 },
+        { x: 335, y: 615 }
     ],
 
     // --- MAPS BELOW STILL NEED COORDINATES ---
