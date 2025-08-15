@@ -64,6 +64,37 @@ body, html {
     cursor: default; /* Change cursor back when item is placed */
 }
 
+/* --- Styles for Edit Mode --- */
+
+#save-coords-button {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 100;
+    padding: 10px 20px;
+    background-color: #c9b037;
+    color: #2c1e10;
+    border: 2px solid #8a6d4f;
+    border-radius: 5px;
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    display: none; /* Hidden by default */
+}
+
+#save-coords-button:hover {
+    background-color: #f5eacb;
+}
+
+.drop-zone.edit-mode {
+    cursor: move;
+    border-style: solid;
+    border-color: #f5eacb;
+    box-shadow: 0 0 10px 3px rgba(255, 235, 179, 0.7);
+}
+
 #battle-map {
     max-width: 100%;
     max-height: 100%;
