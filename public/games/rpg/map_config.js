@@ -31,8 +31,8 @@ const MAP_CONFIG = {
         { x: 451, y: 651 }
     ],
     'Höhle.png': [
-        { x: 120, y: 220 }, // Placeholder for drop zone 1
-        { x: 380, y: 400 }  // Placeholder for drop zone 2
+        { x: 146, y: 531 },
+        { x: 379, y: 576 }
     ],
     'Lava.png': [
         { x: 82, y: 569 },
