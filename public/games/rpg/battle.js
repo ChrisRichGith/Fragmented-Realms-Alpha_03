@@ -103,9 +103,88 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- CHARACTER CARD FUNCTIONS (UNCHANGED) ---
-    function createCharacterCard(characterData) { if (!characterData) return null; const card = document.createElement('div'); card.className = 'char-card'; const name = characterData.name || 'Unknown'; const image = characterData.image || '/images/RPG/Charakter/male_silhouette.svg'; card.innerHTML = `<img src="${image}" alt="${name}"><h3>${name}</h3>`; return card; }
-    function displayCharacters() { const playerCharData = JSON.parse(localStorage.getItem('selectedCharacter')); if (playerCharData) { playerCardContainer.appendChild(createCharacterCard(playerCharData)); } const npcPartyData = JSON.parse(localStorage.getItem('npcParty')) || []; npcCardsContainer.innerHTML = ''; npcPartyData.forEach(npcData => { if (npcData) { const npcCard = createCharacterCard(npcData); if(npcCard) npcCardsContainer.appendChild(npcCard); } }); }
+    // --- CHARACTER CARD FUNCTIONS ---
+
+    function createCharacterCard(characterData) {
+        if (!characterData) return null;
+
+        const card = document.createElement('div');
+        card.className = 'char-card';
+
+        const name = characterData.name || 'Unknown';
+        const imageSrc = characterData.image || '/images/RPG/Charakter/male_silhouette.svg';
+
+        // Create image element
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        img.alt = name;
+
+        // Create info container
+        const infoDiv = document.createElement('div');
+        infoDiv.className = 'char-card-info';
+        const nameHeader = document.createElement('h3');
+        nameHeader.textContent = name;
+        infoDiv.appendChild(nameHeader);
+        // More stats could be added here in the future
+
+        // Create the new drop zone for this character
+        const dropZone = document.createElement('div');
+        dropZone.className = 'char-drop-zone';
+
+        // Add event listeners for the character drop zone
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('drag-over');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('drag-over');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('drag-over');
+            const itemId = e.dataTransfer.getData('text/plain');
+            const itemElement = document.getElementById(itemId);
+
+            // Allow drop only if the zone is empty
+            if (itemElement && dropZone.childElementCount === 0) {
+                // If the item comes from another character's drop zone, move it back first
+                if (itemElement.parentElement.classList.contains('char-drop-zone')) {
+                    // This logic can be enhanced, for now, we just append
+                }
+                dropZone.appendChild(itemElement);
+            }
+        });
+
+        card.appendChild(img);
+        card.appendChild(infoDiv);
+        card.appendChild(dropZone);
+
+        return card;
+    }
+
+    function displayCharacters() {
+        // Clear previous cards
+        playerCardContainer.innerHTML = '';
+        npcCardsContainer.innerHTML = '';
+
+        // Get player character from localStorage
+        const playerCharData = JSON.parse(localStorage.getItem('selectedCharacter'));
+        if (playerCharData) {
+            const playerCard = createCharacterCard(playerCharData);
+            if (playerCard) playerCardContainer.appendChild(playerCard);
+        }
+
+        // Get NPC party from localStorage
+        const npcPartyData = JSON.parse(localStorage.getItem('npcParty')) || [];
+        npcPartyData.forEach(npcData => {
+            if (npcData) { // Check if the slot is not empty
+                const npcCard = createCharacterCard(npcData);
+                if (npcCard) npcCardsContainer.appendChild(npcCard);
+            }
+        });
+    }
 
     // --- COORDINATE EDIT MODE ---
 
